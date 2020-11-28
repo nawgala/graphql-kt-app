@@ -1,0 +1,34 @@
+type Query{
+    hello: String
+    getVehicles : [Vehicle]!
+    getIVehicles: [IVehicle]!
+}
+
+union Vehicle = Car | Bike
+
+type Car {
+    name: String
+    price: Int
+    engineType: String
+}
+
+type Bike {
+    name: String
+    price: Int
+}
+
+interface IVehicle{
+    name: String
+    price: Int
+}
+
+type ICar implements IVehicle {
+    name: String
+    price: Int
+    engineType: String
+}
+
+type IBike implements IVehicle {
+    name: String
+    price: Int
+}
